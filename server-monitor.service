@@ -1,0 +1,14 @@
+[Unit]
+Description=Lightweight Home Server Monitor
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /opt/server-monitor/server.py
+WorkingDirectory=/opt/server-monitor
+Restart=always
+RestartSec=5
+Environment=MONITOR_PORT=8088
+
+[Install]
+WantedBy=multi-user.target
